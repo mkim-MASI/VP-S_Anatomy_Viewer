@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VP&S_Anatomy_Viewer</title>
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+<header>
+  <strong>VP&S_Anatomy_Viewer<span class="badge">V1</span></strong>
+  <select id="dataset-select" title="Dataset"></select>
+  <button id="add-dataset">+ Add Dataset</button>
+  <button id="manage-datasets">Manage</button>
+  <span class="sep"></span>
+  <button id="prev-case">◀</button>
+  <select id="case-select"></select>
+  <button id="next-case">▶</button>
+  <span id="case-position">—</span>
+  <span class="sep"></span>
+  <div class="view-buttons">
+    <button data-view="0">Axial</button><button data-view="1">Coronal</button>
+    <button data-view="2">Sagittal</button><button data-view="3" class="active">Multiplanar</button>
+  </div>
+  <span class="spacer"></span>
+  <label>Seg opacity <input id="opacity" type="range" min="0" max="1" step=".05" value=".55"><span id="opacity-value">55%</span></label>
+  <button id="reset">Reset</button>
+</header>
+<main>
+  <section class="viewer">
+    <canvas id="gl"></canvas>
+    <div id="loading" class="hidden"><div class="loading-card"><div class="spinner"></div><div><b id="loading-title">Working…</b><div id="loading-detail"></div></div></div></div>
+    <div id="status">Starting…</div>
+    <div id="help">[ / ] scans · 1–4 views · R reset</div>
+  </section>
+  <aside>
+    <div class="case-info">
+      <div><span>Dataset</span><b id="info-dataset">—</b></div>
+      <div><span>Scan</span><b id="info-case">—</b></div>
+      <div><span>CT</span><b id="ct-dimensions">—</b></div>
+      <div><span>Spacing</span><b id="ct-spacing">—</b></div>
+      <div><span>Z FOV</span><b id="z-fov">—</b></div>
+      <div><span>Labels</span><b id="case-label-count">—</b></div>
+    </div>
+    <div class="sidebar-title"><strong>Segmentations</strong><span id="label-count">—</span></div>
+    <input id="search" placeholder="Search structures…" autocomplete="off">
+    <div class="actions"><button id="all">Show all</button><button id="none">Hide all</button></div>
+    <div class="hint">Click a structure name to isolate it. Use the checkbox to toggle it.</div>
+    <div id="labels"></div>
+    <div class="info-panel"><div><span>Position</span><b id="position">—</b></div><div><span>CT</span><b id="ct-value">—</b></div><div><span>Label</span><b id="seg-value">—</b></div></div>
+  </aside>
+</main>
+<dialog id="manager"><form method="dialog"><div class="dialog-head"><h2>Datasets</h2><button value="close">✕</button></div><div id="dataset-list"></div><p class="dialog-note">Included datasets are read-only. Removing an imported dataset only removes the app's copy, never the original files.</p></form></dialog>
+<script type="module" src="/src/app.js"></script>
+</body>
+</html>
