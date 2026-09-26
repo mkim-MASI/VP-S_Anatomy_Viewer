@@ -25,9 +25,17 @@ jobs:
 
     steps:
 
+      # -------------------------------------------------------
+      # Checkout
+      # -------------------------------------------------------
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
+
+      # -------------------------------------------------------
+      # Node
+      # -------------------------------------------------------
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -36,9 +44,17 @@ jobs:
           cache: npm
 
 
+      # -------------------------------------------------------
+      # Rust
+      # -------------------------------------------------------
+
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
 
+
+      # -------------------------------------------------------
+      # Rust build cache
+      # -------------------------------------------------------
 
       - name: Rust cache
         uses: swatinem/rust-cache@v2
@@ -46,9 +62,85 @@ jobs:
           workspaces: ./src-tauri -> target
 
 
+      # -------------------------------------------------------
+      # JavaScript dependencies
+      # -------------------------------------------------------
+
       - name: Install dependencies
         run: npm ci
 
+
+      # -------------------------------------------------------
+      # Windows icon diagnostics
+      # -------------------------------------------------------
+
+      - name: Debug Windows Tauri icons
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "========================================"
+          Write-Host "Current directory"
+          Write-Host "========================================"
+
+          Get-Location
+
+
+          Write-Host ""
+          Write-Host "========================================"
+          Write-Host "Contents of src-tauri/icons"
+          Write-Host "========================================"
+
+          if (Test-Path "src-tauri/icons") {
+
+            Get-ChildItem "src-tauri/icons" |
+              Format-Table Name, Length, FullName
+
+          } else {
+
+            Write-Host "ERROR: src-tauri/icons does not exist"
+
+          }
+
+
+          Write-Host ""
+          Write-Host "========================================"
+          Write-Host "Checking icon.ico"
+          Write-Host "========================================"
+
+          if (Test-Path "src-tauri/icons/icon.ico") {
+
+            Write-Host "SUCCESS: icon.ico EXISTS"
+
+            Get-Item "src-tauri/icons/icon.ico" |
+              Format-List FullName, Length, Extension
+
+          } else {
+
+            Write-Host "ERROR: icon.ico DOES NOT EXIST"
+
+          }
+
+
+          Write-Host ""
+          Write-Host "========================================"
+          Write-Host "Tauri configuration"
+          Write-Host "========================================"
+
+          Get-Content "src-tauri/tauri.conf.json"
+
+
+          Write-Host ""
+          Write-Host "========================================"
+          Write-Host "Git tracked icon files"
+          Write-Host "========================================"
+
+          git ls-files src-tauri/icons
+
+
+      # -------------------------------------------------------
+      # Build application
+      # -------------------------------------------------------
 
       - name: Build Tauri application
         uses: tauri-apps/tauri-action@v1
@@ -57,6 +149,10 @@ jobs:
         with:
           args: ${{ matrix.args }}
 
+
+      # -------------------------------------------------------
+      # Upload finished bundles
+      # -------------------------------------------------------
 
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
