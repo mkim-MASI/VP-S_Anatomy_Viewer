@@ -1,4 +1,4 @@
-# TotalSegmentator CT Viewer V4
+# VP&S Anatomy Viewer
 
 A cross-platform Tauri + NiiVue desktop viewer with:
 
