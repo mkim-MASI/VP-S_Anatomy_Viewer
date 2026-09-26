@@ -2,40 +2,37 @@ name: Build VP&S Anatomy Viewer
 
 on:
   workflow_dispatch:
+    inputs:
+      platform:
+        description: "Platform to build"
+        required: true
+        default: "both"
+        type: choice
+        options:
+          - windows
+          - macos
+          - both
+
 
 jobs:
 
-  build:
+  # ============================================================
+  # macOS
+  # ============================================================
+
+  build-macos:
+    if: ${{ inputs.platform == 'macos' || inputs.platform == 'both' }}
+
     permissions:
       contents: read
 
-    strategy:
-      fail-fast: false
-
-      matrix:
-        include:
-
-          - platform: macos-latest
-            args: --target aarch64-apple-darwin
-
-          - platform: windows-latest
-            args: ''
-
-    runs-on: ${{ matrix.platform }}
+    runs-on: macos-latest
 
     steps:
-
-      # -------------------------------------------------------
-      # Checkout
-      # -------------------------------------------------------
 
       - name: Checkout repository
         uses: actions/checkout@v4
 
-
-      # -------------------------------------------------------
-      # Node
-      # -------------------------------------------------------
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -44,17 +41,11 @@ jobs:
           cache: npm
 
 
-      # -------------------------------------------------------
-      # Rust
-      # -------------------------------------------------------
-
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin
 
-
-      # -------------------------------------------------------
-      # Rust build cache
-      # -------------------------------------------------------
 
       - name: Rust cache
         uses: swatinem/rust-cache@v2
@@ -62,102 +53,77 @@ jobs:
           workspaces: ./src-tauri -> target
 
 
-      # -------------------------------------------------------
-      # JavaScript dependencies
-      # -------------------------------------------------------
+      - name: Install dependencies
+        run: npm ci
+
+
+      - name: Build macOS application
+        uses: tauri-apps/tauri-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: --target aarch64-apple-darwin
+
+
+      - name: Upload macOS build
+        uses: actions/upload-artifact@v4
+        with:
+          name: VP-S-Anatomy-Viewer-macOS
+          path: |
+            src-tauri/target/aarch64-apple-darwin/release/bundle/**
+
+
+  # ============================================================
+  # Windows
+  # ============================================================
+
+  build-windows:
+    if: ${{ inputs.platform == 'windows' || inputs.platform == 'both' }}
+
+    permissions:
+      contents: read
+
+    runs-on: windows-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+
+
+      - name: Rust cache
+        uses: swatinem/rust-cache@v2
+        with:
+          workspaces: ./src-tauri -> target
+
 
       - name: Install dependencies
         run: npm ci
 
 
-      # -------------------------------------------------------
-      # Windows icon diagnostics
-      # -------------------------------------------------------
-
-      - name: Debug Windows Tauri icons
-        if: runner.os == 'Windows'
-        shell: pwsh
-        run: |
-          Write-Host ""
-          Write-Host "========================================"
-          Write-Host "Current directory"
-          Write-Host "========================================"
-
-          Get-Location
-
-
-          Write-Host ""
-          Write-Host "========================================"
-          Write-Host "Contents of src-tauri/icons"
-          Write-Host "========================================"
-
-          if (Test-Path "src-tauri/icons") {
-
-            Get-ChildItem "src-tauri/icons" |
-              Format-Table Name, Length, FullName
-
-          } else {
-
-            Write-Host "ERROR: src-tauri/icons does not exist"
-
-          }
-
-
-          Write-Host ""
-          Write-Host "========================================"
-          Write-Host "Checking icon.ico"
-          Write-Host "========================================"
-
-          if (Test-Path "src-tauri/icons/icon.ico") {
-
-            Write-Host "SUCCESS: icon.ico EXISTS"
-
-            Get-Item "src-tauri/icons/icon.ico" |
-              Format-List FullName, Length, Extension
-
-          } else {
-
-            Write-Host "ERROR: icon.ico DOES NOT EXIST"
-
-          }
-
-
-          Write-Host ""
-          Write-Host "========================================"
-          Write-Host "Tauri configuration"
-          Write-Host "========================================"
-
-          Get-Content "src-tauri/tauri.conf.json"
-
-
-          Write-Host ""
-          Write-Host "========================================"
-          Write-Host "Git tracked icon files"
-          Write-Host "========================================"
-
-          git ls-files src-tauri/icons
-
-
-      # -------------------------------------------------------
-      # Build application
-      # -------------------------------------------------------
-
-      - name: Build Tauri application
+      - name: Build Windows NSIS installer
         uses: tauri-apps/tauri-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          args: ${{ matrix.args }}
+          args: --bundles nsis
 
 
-      # -------------------------------------------------------
-      # Upload finished bundles
-      # -------------------------------------------------------
-
-      - name: Upload build artifacts
+      - name: Upload Windows build
         uses: actions/upload-artifact@v4
         with:
-          name: VP-S-Anatomy-Viewer-${{ runner.os }}
+          name: VP-S-Anatomy-Viewer-Windows
           path: |
-            src-tauri/target/release/bundle/**
-            src-tauri/target/*/release/bundle/**
+            src-tauri/target/release/bundle/nsis/**
+            src-tauri/target/release/VPS-Anatomy-Viewer.exe
