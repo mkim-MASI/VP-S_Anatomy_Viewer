@@ -36,8 +36,8 @@ Do **not** disable Gatekeeper globally.
 
 ## Windows
 
-Download the Windows installer (`.exe`) from the project's release page and
-run it.
+Unzip the VP-S-Anatomy-Viewer-Windows.zip file. Do not run the .exe file, instead
+navigate to the installer `.exe` file that is a few folders deep and run that, 
 
 Because the application is currently not code-signed, Microsoft Defender
 SmartScreen may display:
