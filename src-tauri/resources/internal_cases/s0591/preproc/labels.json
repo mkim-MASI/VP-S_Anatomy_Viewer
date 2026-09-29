@@ -91,531 +91,641 @@
   },
   {
     "id": 19,
+    "name": "erector_spinae_left",
+    "voxels": 130905
+  },
+  {
+    "id": 20,
+    "name": "erector_spinae_right",
+    "voxels": 121000
+  },
+  {
+    "id": 21,
     "name": "esophagus",
     "voxels": 11200
   },
   {
-    "id": 20,
+    "id": 22,
+    "name": "external_oblique_left",
+    "voxels": 53773
+  },
+  {
+    "id": 23,
+    "name": "external_oblique_right",
+    "voxels": 49458
+  },
+  {
+    "id": 24,
     "name": "femur_left",
     "voxels": 7344
   },
   {
-    "id": 21,
+    "id": 25,
     "name": "femur_right",
     "voxels": 5420
   },
   {
-    "id": 22,
+    "id": 26,
     "name": "gallbladder",
     "voxels": 7510
   },
   {
-    "id": 23,
+    "id": 27,
     "name": "gluteus_maximus_left",
     "voxels": 83351
   },
   {
-    "id": 24,
+    "id": 28,
     "name": "gluteus_maximus_right",
     "voxels": 81774
   },
   {
-    "id": 25,
+    "id": 29,
     "name": "gluteus_medius_left",
     "voxels": 72225
   },
   {
-    "id": 26,
+    "id": 30,
     "name": "gluteus_medius_right",
     "voxels": 72233
   },
   {
-    "id": 27,
+    "id": 31,
     "name": "gluteus_minimus_left",
     "voxels": 21548
   },
   {
-    "id": 28,
+    "id": 32,
     "name": "gluteus_minimus_right",
     "voxels": 17573
   },
   {
-    "id": 29,
+    "id": 33,
     "name": "heart",
     "voxels": 178685
   },
   {
-    "id": 30,
+    "id": 34,
     "name": "heart_atrium_left",
     "voxels": 25859
   },
   {
-    "id": 31,
+    "id": 35,
     "name": "heart_atrium_right",
     "voxels": 28164
   },
   {
-    "id": 32,
+    "id": 36,
     "name": "heart_myocardium",
     "voxels": 35878
   },
   {
-    "id": 33,
+    "id": 37,
     "name": "heart_ventricle_left",
     "voxels": 30720
   },
   {
-    "id": 34,
+    "id": 38,
     "name": "heart_ventricle_right",
     "voxels": 37351
   },
   {
-    "id": 35,
+    "id": 39,
     "name": "hip_left",
     "voxels": 100956
   },
   {
-    "id": 36,
+    "id": 40,
     "name": "hip_right",
     "voxels": 96843
   },
   {
-    "id": 37,
+    "id": 41,
     "name": "humerus_left",
     "voxels": 32682
   },
   {
-    "id": 38,
+    "id": 42,
     "name": "humerus_right",
     "voxels": 43831
   },
   {
-    "id": 39,
+    "id": 43,
     "name": "iliac_artery_left",
     "voxels": 3066
   },
   {
-    "id": 40,
+    "id": 44,
     "name": "iliac_artery_right",
     "voxels": 4178
   },
   {
-    "id": 41,
+    "id": 45,
     "name": "iliac_vena_left",
     "voxels": 6568
   },
   {
-    "id": 42,
+    "id": 46,
     "name": "iliac_vena_right",
     "voxels": 6389
   },
   {
-    "id": 43,
+    "id": 47,
     "name": "iliopsoas_left",
     "voxels": 72348
   },
   {
-    "id": 44,
+    "id": 48,
     "name": "iliopsoas_right",
     "voxels": 72767
   },
   {
-    "id": 45,
+    "id": 49,
     "name": "inferior_vena_cava",
     "voxels": 18858
   },
   {
-    "id": 46,
+    "id": 50,
+    "name": "internal_oblique_left",
+    "voxels": 23124
+  },
+  {
+    "id": 51,
+    "name": "internal_oblique_right",
+    "voxels": 23640
+  },
+  {
+    "id": 52,
     "name": "kidney_cyst_left",
     "voxels": 0
   },
   {
-    "id": 47,
+    "id": 53,
     "name": "kidney_cyst_right",
     "voxels": 4506
   },
   {
-    "id": 48,
+    "id": 54,
     "name": "kidney_left",
     "voxels": 41638
   },
   {
-    "id": 49,
+    "id": 55,
     "name": "kidney_right",
     "voxels": 40933
   },
   {
-    "id": 50,
+    "id": 56,
+    "name": "latissimus_dorsi_left",
+    "voxels": 85002
+  },
+  {
+    "id": 57,
+    "name": "latissimus_dorsi_right",
+    "voxels": 83946
+  },
+  {
+    "id": 58,
     "name": "liver",
     "voxels": 381464
   },
   {
-    "id": 51,
+    "id": 59,
     "name": "lung_lower_lobe_left",
     "voxels": 99139
   },
   {
-    "id": 52,
+    "id": 60,
     "name": "lung_lower_lobe_right",
     "voxels": 233486
   },
   {
-    "id": 53,
+    "id": 61,
     "name": "lung_middle_lobe_right",
     "voxels": 103741
   },
   {
-    "id": 54,
+    "id": 62,
     "name": "lung_upper_lobe_left",
     "voxels": 266985
   },
   {
-    "id": 55,
+    "id": 63,
     "name": "lung_upper_lobe_right",
     "voxels": 188389
   },
   {
-    "id": 56,
+    "id": 64,
     "name": "pancreas",
     "voxels": 21620
   },
   {
-    "id": 57,
+    "id": 65,
+    "name": "pectoralis_major_left",
+    "voxels": 60477
+  },
+  {
+    "id": 66,
+    "name": "pectoralis_major_right",
+    "voxels": 81766
+  },
+  {
+    "id": 67,
     "name": "portal_vein_and_splenic_vein",
     "voxels": 6827
   },
   {
-    "id": 58,
+    "id": 68,
     "name": "prostate",
     "voxels": 0
   },
   {
-    "id": 59,
+    "id": 69,
+    "name": "psoas_major_left",
+    "voxels": 40219
+  },
+  {
+    "id": 70,
+    "name": "psoas_major_right",
+    "voxels": 41433
+  },
+  {
+    "id": 71,
     "name": "pulmonary_artery",
     "voxels": 20013
   },
   {
-    "id": 60,
+    "id": 72,
     "name": "pulmonary_vein",
     "voxels": 7858
   },
   {
-    "id": 61,
+    "id": 73,
+    "name": "quadratus_lumborum_left",
+    "voxels": 13092
+  },
+  {
+    "id": 74,
+    "name": "quadratus_lumborum_right",
+    "voxels": 9355
+  },
+  {
+    "id": 75,
+    "name": "rectus_abdominis_left",
+    "voxels": 37114
+  },
+  {
+    "id": 76,
+    "name": "rectus_abdominis_right",
+    "voxels": 37937
+  },
+  {
+    "id": 77,
     "name": "rib_left_1",
     "voxels": 3964
   },
   {
-    "id": 62,
+    "id": 78,
     "name": "rib_left_10",
     "voxels": 6690
   },
   {
-    "id": 63,
+    "id": 79,
     "name": "rib_left_11",
     "voxels": 4231
   },
   {
-    "id": 64,
+    "id": 80,
     "name": "rib_left_12",
     "voxels": 1760
   },
   {
-    "id": 65,
+    "id": 81,
     "name": "rib_left_2",
     "voxels": 4541
   },
   {
-    "id": 66,
+    "id": 82,
     "name": "rib_left_3",
     "voxels": 5259
   },
   {
-    "id": 67,
+    "id": 83,
     "name": "rib_left_4",
     "voxels": 7265
   },
   {
-    "id": 68,
+    "id": 84,
     "name": "rib_left_5",
     "voxels": 8190
   },
   {
-    "id": 69,
+    "id": 85,
     "name": "rib_left_6",
     "voxels": 9463
   },
   {
-    "id": 70,
+    "id": 86,
     "name": "rib_left_7",
     "voxels": 9608
   },
   {
-    "id": 71,
+    "id": 87,
     "name": "rib_left_8",
     "voxels": 8426
   },
   {
-    "id": 72,
+    "id": 88,
     "name": "rib_left_9",
     "voxels": 7740
   },
   {
-    "id": 73,
+    "id": 89,
     "name": "rib_right_1",
     "voxels": 4551
   },
   {
-    "id": 74,
+    "id": 90,
     "name": "rib_right_10",
     "voxels": 6253
   },
   {
-    "id": 75,
+    "id": 91,
     "name": "rib_right_11",
     "voxels": 3688
   },
   {
-    "id": 76,
+    "id": 92,
     "name": "rib_right_12",
     "voxels": 1614
   },
   {
-    "id": 77,
+    "id": 93,
     "name": "rib_right_2",
     "voxels": 5234
   },
   {
-    "id": 78,
+    "id": 94,
     "name": "rib_right_3",
     "voxels": 5444
   },
   {
-    "id": 79,
+    "id": 95,
     "name": "rib_right_4",
     "voxels": 6976
   },
   {
-    "id": 80,
+    "id": 96,
     "name": "rib_right_5",
     "voxels": 9011
   },
   {
-    "id": 81,
+    "id": 97,
     "name": "rib_right_6",
     "voxels": 9794
   },
   {
-    "id": 82,
+    "id": 98,
     "name": "rib_right_7",
     "voxels": 9267
   },
   {
-    "id": 83,
+    "id": 99,
     "name": "rib_right_8",
     "voxels": 8030
   },
   {
-    "id": 84,
+    "id": 100,
     "name": "rib_right_9",
     "voxels": 6895
   },
   {
-    "id": 85,
+    "id": 101,
     "name": "sacrum",
     "voxels": 59921
   },
   {
-    "id": 86,
+    "id": 102,
     "name": "scapula_left",
     "voxels": 33550
   },
   {
-    "id": 87,
+    "id": 103,
     "name": "scapula_right",
     "voxels": 42472
   },
   {
-    "id": 88,
+    "id": 104,
+    "name": "serratus_anterior_left",
+    "voxels": 38379
+  },
+  {
+    "id": 105,
+    "name": "serratus_anterior_right",
+    "voxels": 35132
+  },
+  {
+    "id": 106,
     "name": "skull",
     "voxels": 261271
   },
   {
-    "id": 89,
+    "id": 107,
     "name": "small_bowel",
     "voxels": 340457
   },
   {
-    "id": 90,
+    "id": 108,
     "name": "spinal_cord",
     "voxels": 24876
   },
   {
-    "id": 91,
+    "id": 109,
     "name": "spleen",
     "voxels": 42907
   },
   {
-    "id": 92,
+    "id": 110,
     "name": "sternum",
     "voxels": 26953
   },
   {
-    "id": 93,
+    "id": 111,
     "name": "stomach",
     "voxels": 174958
   },
   {
-    "id": 94,
+    "id": 112,
     "name": "subclavian_artery_left",
     "voxels": 2330
   },
   {
-    "id": 95,
+    "id": 113,
     "name": "subclavian_artery_right",
     "voxels": 2285
   },
   {
-    "id": 96,
+    "id": 114,
     "name": "superior_vena_cava",
     "voxels": 6461
   },
   {
-    "id": 97,
+    "id": 115,
     "name": "thyroid_gland",
     "voxels": 4653
   },
   {
-    "id": 98,
+    "id": 116,
     "name": "trachea",
     "voxels": 13595
   },
   {
-    "id": 99,
+    "id": 117,
+    "name": "transversospinalis_left",
+    "voxels": 47660
+  },
+  {
+    "id": 118,
+    "name": "transversospinalis_right",
+    "voxels": 51833
+  },
+  {
+    "id": 119,
+    "name": "trapezius_left",
+    "voxels": 19640
+  },
+  {
+    "id": 120,
+    "name": "trapezius_right",
+    "voxels": 21359
+  },
+  {
+    "id": 121,
     "name": "urinary_bladder",
     "voxels": 62746
   },
   {
-    "id": 100,
+    "id": 122,
     "name": "vertebrae_C1",
     "voxels": 5789
   },
   {
-    "id": 101,
+    "id": 123,
     "name": "vertebrae_C2",
     "voxels": 7337
   },
   {
-    "id": 102,
+    "id": 124,
     "name": "vertebrae_C3",
     "voxels": 4817
   },
   {
-    "id": 103,
+    "id": 125,
     "name": "vertebrae_C4",
     "voxels": 4915
   },
   {
-    "id": 104,
+    "id": 126,
     "name": "vertebrae_C5",
     "voxels": 5284
   },
   {
-    "id": 105,
+    "id": 127,
     "name": "vertebrae_C6",
     "voxels": 5713
   },
   {
-    "id": 106,
+    "id": 128,
     "name": "vertebrae_C7",
     "voxels": 7734
   },
   {
-    "id": 107,
+    "id": 129,
     "name": "vertebrae_L1",
     "voxels": 19448
   },
   {
-    "id": 108,
+    "id": 130,
     "name": "vertebrae_L2",
     "voxels": 19506
   },
   {
-    "id": 109,
+    "id": 131,
     "name": "vertebrae_L3",
     "voxels": 22986
   },
   {
-    "id": 110,
+    "id": 132,
     "name": "vertebrae_L4",
     "voxels": 23840
   },
   {
-    "id": 111,
+    "id": 133,
     "name": "vertebrae_L5",
     "voxels": 23473
   },
   {
-    "id": 112,
+    "id": 134,
     "name": "vertebrae_S1",
     "voxels": 15053
   },
   {
-    "id": 113,
+    "id": 135,
     "name": "vertebrae_T1",
     "voxels": 8990
   },
   {
-    "id": 114,
+    "id": 136,
     "name": "vertebrae_T10",
     "voxels": 13481
   },
   {
-    "id": 115,
+    "id": 137,
     "name": "vertebrae_T11",
     "voxels": 15000
   },
   {
-    "id": 116,
+    "id": 138,
     "name": "vertebrae_T12",
     "voxels": 16595
   },
   {
-    "id": 117,
+    "id": 139,
     "name": "vertebrae_T2",
     "voxels": 8419
   },
   {
-    "id": 118,
+    "id": 140,
     "name": "vertebrae_T3",
     "voxels": 8430
   },
   {
-    "id": 119,
+    "id": 141,
     "name": "vertebrae_T4",
     "voxels": 8614
   },
   {
-    "id": 120,
+    "id": 142,
     "name": "vertebrae_T5",
     "voxels": 9213
   },
   {
-    "id": 121,
+    "id": 143,
     "name": "vertebrae_T6",
     "voxels": 9838
   },
   {
-    "id": 122,
+    "id": 144,
     "name": "vertebrae_T7",
     "voxels": 10555
   },
   {
-    "id": 123,
+    "id": 145,
     "name": "vertebrae_T8",
     "voxels": 11316
   },
   {
-    "id": 124,
+    "id": 146,
     "name": "vertebrae_T9",
     "voxels": 12268
   }
